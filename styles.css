@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap');
+
+
+
+#ripple-effect {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #0a192f; /* Matches main background */
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+body {
+    font-family: 'Lexend', sans-serif;
+    background-color: #0a192f;
+    color: #e6f1ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* overflow: hidden; */
+
+}
+
+
+
+.container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0px 20px 20px 20px;
+    position: relative;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 40%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #ffd700;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.linkedin-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkedin-icon img {
+    width: 42px;
+    height: 42px;
+}
+
+
+
+
+
+/* Glowing Load Button */
+.glowing-button {
+    background-color: cyan;
+    color: white;
+    border: none;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px yellow, 0 0 20px gold, 0 0 30px yellow;
+}
+
+@keyframes glowing {
+    0% { box-shadow: 0 0 10px yellow, 0 0 20px gold, 0 0 30px yellow; }
+    50% { box-shadow: 0 0 15px gold, 0 0 25px yellow, 0 0 35px gold; }
+    100% { box-shadow: 0 0 10px yellow, 0 0 20px gold, 0 0 30px yellow; }
+}
+
+.glowing-button:hover {
+    animation: glowing 1.5s infinite alternate;
+    transform: scale(1.1);
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 300px;
+    z-index: 1000;
+}
+
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Close Button */
+.close-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
+
+
+
+
+
+
+/* H1 gathering animation design */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+h1 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 4px 0 rgb(36, 115, 142);
+    border-radius: 6px;
+
+}
+
+h1 span {
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+    transform: translate(calc(-50vw + 50%), calc(-50vh + 50%)) scale(3);
+    animation: gather 1.5s ease-out forwards;
+    background: #071737;
+    box-shadow: 0 4px 0px rgb(36, 115, 142);
+    
+}
+
+@keyframes gather {
+    0% {
+        opacity: 0;
+        transform: translate(calc(-50vw + 50%), calc(-50vh + 50%)) scale(3);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(5px, -5px) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+/* Hero flipping aniamtion design */
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+.hero{
+    font-family: 'Lexend', sans-serif;
+    background: #0b1e39; /* Ensure visibility */
+    box-shadow: 0 4px 10px rgb(36, 115, 142);
+    border-radius: 8px; /* Optional for smooth edges */
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    animation: pulseAnimation 3s infinite; 
+
+}
+@keyframes pulseAnimation {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.hero.flip-once {
+    animation: flip 1s ease-in-out; /* Flip effect */
+}
+
+
+.intro {
+    font-weight: 550;
+    text-align: center;
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 12px;
+    /* box-shadow: 0 4px 10px rgba(255, 183, 77, 0.2); */
+    
+    /* Fully opaque background */
+    background-color: rgba(64, 97, 127, 1); 
+    
+    /* Gradient Flow Effect */
+    background: linear-gradient(90deg, 
+    #FFAA85, #FFB74D, #FFD27F, #D4A373, #A8DADC, 
+    #0D94E9, #2A9D8F, #C5E898, #A6A9B6, #E5989B, 
+    #FF9671, #FFC75F, #F9F871, #8AC926, #B5EAD7, 
+    #DCEDC1, #FFBE0B, #C397D8, #EFB0C9, #C780FA);
+
+
+    background-size: 400% 100%;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Updated animation */
+    animation: 
+        liveflow 10s linear infinite, /* Smooth left-to-right flow */
+        bounceFlow 3s ease-in-out infinite; /* Gentle bounce */
+}
+
+/* LIVE COLOR FLOW WITH ALL COLORS */
+@keyframes liveflow {
+    0%, 100% { 
+        background-image: linear-gradient(90deg, 
+            #FFAA85, #FFB74D, #FFD27F, #D4A373, #D8A7B1, 
+            #B5838D, #E5989B, #FF5F6D, #FFC371, #6A0572, 
+            #17BEBB, #2EC4B6, #F15BB5, #FFBE0B, #FB5607);
+    }
+    25% { 
+        background-image: linear-gradient(90deg, 
+            #FF9671, #FFC75F, #F9F871, #A0C4FF, #6A4C93, 
+            #8AC926, #C780FA, #FF9A8B, #9D4EDD, #FF006E, 
+            #8338EC, #3A86FF, #FFBE0B, #FB5607, #FF758F);
+    }
+    50% { 
+        background-image: linear-gradient(90deg, 
+            #EFB0C9, #FF758F, #F8C471, #C5E898, #7D7ABC, 
+            #F4978E, #C397D8, #8B5CF6, #F15BB5, #9B5DE5, 
+            #FFBE0B, #FB5607, #FFAA85, #FFB74D, #FFD27F);
+    }
+    75% { 
+        background-image: linear-gradient(90deg, 
+            #A8E6CF, #DCEDC1, #FF8B94, #B5EAD7, #FFDAC1, 
+            #6A0572, #E0BBE4, #957DAD, #A6A9B6, #F15BB5, 
+            #9B5DE5, #FFBE0B, #FB5607, #FFC371, #D4A373);
+    }
+}
+
+
+@keyframes liveflow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes bounceFlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+#playButton{
+    width: 100px; 
+    height: 100px; 
+    cursor: pointer;
+    margin-top: 50px;
+    border-radius: 30%;
+}
+
+
+
+
+
+
+ 
+
+p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 600px;
+    line-height: 1.5;
+    padding-bottom: 10px;
+    margin-top: 5px; 
+}
+
+
+.buttons button {
+    background-color: #112240;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    padding: 12px 25px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    font-family: 'Lexend', sans-serif;
+    background-color: #ffd700;
+    color: #112240;
+}
+
+.section {
+    display: none;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.section.active {
+    display: block;
+}
+
+form input, form textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #233554;
+    background: #112240;
+    color: #e6f1ff;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #ffd700;
+    color: #0a192f;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background-color: #e6c200;
+}
+
+/* Skills Section */
+#skills-content {
+    display: none;
+    padding: 20px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.skills-list li {
+    padding: 8px;
+    background-color: #112240;
+    border: 1px solid #ffd700;
+    border-radius: 10px;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.skills-list li:hover {
+    background-color: #ffd700;
+    color: #112240;
+}
+
+a {
+    color: #0a192f; /* Set your desired color */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+}
+
+a:hover {
+    color: #facc15; /* Change color on hover */
+}
+
+button img {
+    width: 20px; /* Adjust size */
+    height: 20px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.project{
+    width: 25px; /* Adjust size */
+    height: 25px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers it relative to its parent */
+    width: auto; /* Adjust width to match content width */
+    max-width: 1200px; /* Prevent excessive stretching */
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+    background-color: #0a192f;
+    color: white;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        text-align: center;
+        font-size: 1rem;
+        text-align: left;
+    }
+    form input, form textarea {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    p {
+        text-align: left; /* Better readability on small screens */
+        line-height: 1.6; /* Improve text spacing */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    
+}
+
+
+
+@media (max-width: 768px) {
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+        gap: 15px 30px; /* 15px row-gap, 20px column-gap */
+        justify-content: center;
+        align-items: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .buttons button {
+        width: 100%;
+        max-width: 160px; /* Uniform size */
+        min-height: 50px; /* Ensures all buttons match */
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border: 2px solid #ffd700; /* Ensures border consistency */
+        background: #112240;
+        color: white;
+        font-family: 'Lexend', sans-serif;
+        font-size: 20px;
+        border-radius: 30px;
+    }
+
+    .buttons button i {
+        margin-right: 5px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .hero {
+        max-width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        transform: scale(0.9); /* Shrinks the entire hero box */
+    }
+
+    p {
+        text-align: left; /* Prevents uneven spacing */
+        font-size: 14px; /* Ensures readability */
+        padding: 10px; /* Adds spacing around text */
+        line-height: 1.6; /* Improves readability */
+        word-spacing: normal; /* Resets unnecessary space between words */
+        white-space: normal; /* Prevents forced word breaks */
+        hyphens: auto; /* Allows natural word breaking */
+    }
+
+    .container {
+        max-width: 95%; /* Ensures the paragraph fits well */
+        margin: auto;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .profile-picture {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 5px;
+    }
+
+    .linkedin-icon {
+        background: #f5f5f600;
+        width: 3%;
+        height: 30px;
+        bottom: 20px;
+        right: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.7rem;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        text-align: center;
+        box-shadow: 0 4px 0 rgb(36, 115, 142); /* Keep box-shadow for h1 */
+    }
+
+    h1 span {
+        box-shadow: none !important; /* Remove box-shadow for h1 span only */
+        padding-bottom: 4px;
+    }
+   
+}

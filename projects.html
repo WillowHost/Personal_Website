@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">&larr; Back</a>
+    </header>
+    <div class="projects-container">
+        <h1>My Projects</h1>
+
+        <a href="https://github.com/ashirbad-scripts" class="img-button" target="_blank">
+            <img src="github-svgrepo-com.svg" alt="">
+              My Github
+        </a>
+
+        <div class="project-item">
+            <h2 class="project-title">CHEMICAL REACTION SIMULATOR</h2>
+            <a href="https://github.com/ashirbad-scripts/Chemical_Reactions_Simulator" class="project-link" target="_blank">Source Code</a>
+        </div>
+        <div class="project-item">
+            <h2 class="project-title">HTML & CSS PLAYGROUND</h2>
+            <a href="https://github.com/ashirbad-scripts/HTML-CSS-PlayGround" class="project-link" target="_blank">Source Code</a>
+        </div>
+        <div class="project-item">
+            <h2 class="project-title">HIT THE TARGET</h2>
+            <a href="https://example.com/project3" class="project-link" target="_blank">Source Code</a>
+        </div>
+        <div class="project-item"> 
+            <h2 class="project-title">LOCKDOWN WEBCAM</h2>
+            <a href="https://github.com/ashirbad-scripts/Flask_webcam_LockdownBrowser" class="project-link" target="_blank">Source Code</a>
+        </div>
+        <div class="project-item">
+            <h2 class="project-title">SIMPLE CHATBOT</h2>
+            <a href="https://github.com/ashirbad-scripts/willow-chatbot" class="project-link" target="_blank">Source Code</a>
+        </div>
+        <div class="project-item">
+            <h2 class="project-title">Project 5</h2>
+            <a href="https://example.com/project5" class="project-link" target="_blank">Source Code</a>
+        </div>
+        <div class="project-item">
+            <h2 class="project-title">Project 5</h2>
+            <a href="https://example.com/project5" class="project-link" target="_blank">Source Code</a>
+        </div>
+        <div class="project-item">
+            <h2 class="project-title">Project 5</h2>
+            <a href="https://example.com/project5" class="project-link" target="_blank">Source Code</a>
+        </div>
+        <div class="project-item">
+            <h2 class="project-title">Project 5</h2>
+            <a href="https://example.com/project5" class="project-link" target="_blank">Source Code</a>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const h2Elements = document.querySelectorAll(".project-title");
+
+        h2Elements.forEach((h2) => {
+                h2.classList.add("animate__animated", "animate__bounceInLeft");
+
+                // Remove animation class after animation ends
+                h2.addEventListener("animationend", function () {
+                    h2.classList.remove("animate__animated", "animate__bounceInLeft");
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Apply animation to all project titles immediately
+    document.querySelectorAll(".project-title").forEach(title => {
+        title.classList.add("animate__animated", "animate__bounceInLeft");
+
+        title.addEventListener("animationend", function () {
+            title.classList.remove("animate__animated", "animate__bounceInLeft");
+        });
+    });
+
+    // Apply animation to all project links after 3 seconds
+    setTimeout(() => {
+        document.querySelectorAll(".project-link").forEach(link => {
+            link.style.opacity = "1"; // Make links visible
+            link.style.visibility = "visible"; // Ensure they take space
+            link.classList.add("animate__animated", "animate__bounceInUp");
+
+            link.addEventListener("animationend", function () {
+                link.classList.remove("animate__animated", "animate__bounceInUp");
+            });
+        });
+    }, 800); // 3-second delay before links animate
+});
+
+    </script>
+
+
+
+</body>
+</html>

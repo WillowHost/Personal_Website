@@ -1,0 +1,143 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&family=Roboto:wght@400&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a192f; /* Dark Navy Background */
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* gif for background */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Prevents scrolling issues */
+    background: url('https://i.gifer.com/IrM.gif') center center / cover no-repeat fixed;
+}
+
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 2px;
+    left: 0; /* Ensure it stretches from the left */
+    width: 100%; /* Full width */
+    text-align: center; /* Center the text */
+    color: #30363d;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #ffd700cf;
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 12px 0;
+}
+
+.back-button:hover {
+    background-color: #70abee;
+}
+
+/* Skills Container */
+.projects-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 5rem;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px, 20px, 0px, 20px;
+}
+
+/* Title */
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.img-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1660e0;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 40px; /* Added more space below the button */
+}
+.img-button:hover {
+    background-color: #1565c0;
+}
+.img-button img {
+    width: 40px;
+    height: 40px;
+    padding-right: 10px;
+}
+
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+.project-item h2 {
+    margin: 0 20px 0 0;
+    font-size: 21px;
+    color: #1ccec5;
+}
+
+.project-title {
+    animation-duration: 1.5s !important; /* Slows down animation */
+}
+.project-link {
+    opacity: 0; /* Hide links initially */
+    visibility: hidden; /* Ensures they don't take space */
+}
+
+
+.project-item a {
+    font-size: 20px;
+    color: #ffd700;
+    text-decoration: none;
+}
+.project-item a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        width: 90%;
+    }
+    .project-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .project-item h2, .project-item a {
+        margin-bottom: 8px;
+    }
+}
+

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="buttonStyles.css"> <!-- Load button styles -->
+
+
+
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <div id="ripple-background"></div>
+
+
+    <div id="main-content">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-picture">
+                    <img src="Passport_photo (1).jpg" alt="Profile Picture">
+                </div>
+                <a href="https://www.linkedin.com/in/ashirbad-routray-7a872732a" target="_blank" class="linkedin-icon">
+                    <img src="linkedln.svg" alt="LinkedIn">
+                </a>
+            </div>
+            <h1 id="animatedText">Ashirbad Routray</h1>
+
+            <p class="hero" id="hero">
+                I am a <span class="intro">Web developer</span> passionate about integrating various <span class="intro">AI tools</span>and
+                implementing <span class="intro">3D animations</span> in web pages to increase <span class="intro">users engagement </span>and web experience.
+
+                <button id="loadButton" class="glowing-button">More</button>
+                <div id="popup-container"></div>    <!-- Popup Container (Initially Empty) -->
+             </p>
+
+
+            
+
+
+
+
+
+            <div class="buttons">
+                <a href="skills.html">
+                    <button>
+                        <img src="skills.svg" alt="Skills Icon">
+                        Skills
+                    </button>
+                </a>
+                
+                <a href="contact.html">
+                    <button>
+                        <img src="contact.svg" alt="Skills Icon">
+                        Contact
+                    </button>
+                </a>  
+
+                <a href="projects.html">
+                    <button>
+                        <img src="folder-check-svgrepo-com.svg" class= "project" alt="Skills Icon">
+                        Projects
+                    </button>
+                </a>  
+
+
+
+                <!-- <button onclick="window.open('Resume.pdf')"> Download CV</button> -->
+                <button onclick="downloadCV()"><img src="cv.svg" alt="Resume Icon" width="20" height="20">Resumé</button>
+
+                <script>
+                  function downloadCV() {
+                    const link = document.createElement('a');
+                    link.href = 'Resume.pdf'; // Path to the CV file
+                    link.download = 'AR_Resume.pdf'; // Name of the downloaded file
+                    link.click(); // Trigger the download
+                  }
+                </script>   
+            </div>
+
+
+            
+            <img id="playButton" src="play-button.jpg" alt="Play Music">
+
+                <!-- Audio Element -->
+                <audio id="bgMusic">
+                    <source src="audio.mp3" type="audio/mpeg">
+                </audio>
+                <script>
+                    let audio = document.getElementById("bgMusic");
+                    let playButton = document.getElementById("playButton");
+            
+                    // Play audio when image is clicked
+                    playButton.onclick = function() {
+                        if (audio.paused || audio.ended) { // Only play if paused or finished
+                            audio.currentTime = 0; // Ensure it starts from beginning
+                            audio.play();
+                        }
+                    };
+            
+                    // Ensure the audio does not loop
+                    audio.loop = false;
+                </script>
+
+
+
+
+
+        </div>
+
+    </div>
+
+    <!-- <audio autoplay loop>
+        <source src="verse1.mp3" type="audio/mpeg">
+      </audio>
+       -->
+
+           <!-- Image as a Play Button -->
+        <!-- Image as a Play Button -->
+        
+
+    
+       
+
+
+
+    <!-- H2 gathering animation design -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const text = document.getElementById("animatedText");
+            const letters = text.innerText.split("");
+            text.innerHTML = ""; // Clear existing text
+            
+            letters.forEach((char, index) => {
+                let span = document.createElement("span");
+                span.innerText = char === " " ? "\u00A0" : char; // Preserve spaces
+                span.style.animationDelay = `${index * 0.05}s`; // Staggered animation
+                text.appendChild(span);
+            });
+        });
+    </script>
+    
+    
+    
+    
+
+<!-- HERO Section flipping design -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let hero = document.getElementById("hero");
+
+            // Add flip animation only once
+            hero.classList.add("animate__animated", "animate__flip");
+
+            // Remove the flip animation class after it runs once
+            setTimeout(() => {
+                hero.classList.remove("animate__animated", "animate__flip");
+            }, 1000); // 1s delay to match flip animation duration
+        });
+    </script>
+
+
+
+
+    <!-- Ripple Effect animation -->
+    <div id="ripple-effect"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="ripple-config.js"></script>
+
+
+    <script>
+
+        particlesJS("ripple-effect", {
+            particles: {
+                number: {
+                    value: 150, // More particles for higher concentration
+                    density: { enable: true, value_area: 1800 } // Makes them more clustered
+                },
+                color: { value: ["#ffd700", "#ccd6f6", "#8892b0"] },
+                shape: {
+                    type: ["circle", "polygon", "triangle", "star"],
+                    stroke: { width: 1, color: "#ffffff" },
+                    polygon: { nb_sides: 6 }
+                },
+                opacity: {
+                    value: 0.95, // Slightly stronger opacity overall
+                    random: true,
+                    anim: { enable: true, speed: 0.5, opacity_min: 0.3, sync: false }
+                },
+                size: {
+                    value: 6,
+                    random: true,
+                    anim: { enable: true, speed: 2, size_min: 3, sync: false }
+                },
+                move: {
+                    enable: true,
+                    speed: 1.8,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    attract: { enable: true, rotateX: 1600, rotateY: 1600 } // More attraction to edges
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onclick: { enable: true, mode: "push" },
+                    onhover: { enable: true, mode: "repulse" }
+                },
+                modes: {
+                    repulse: { distance: 350, duration: 0.4 }, // Stronger push effect
+                    push: { particles_nb: 5 }
+                }
+            },
+            retina_detect: true
+        });
+
+        /* Custom Particle Distribution - Higher Edge Density */
+        setTimeout(() => {
+            const particles = window.pJSDom[0].pJS.particles.array;
+
+            particles.forEach(p => {
+                if (p.x > window.innerWidth * 0.35 && p.x < window.innerWidth * 0.65) {
+                    p.opacity = 0.3; // Less visible in center but not too faded
+                    p.size = Math.random() * 2 + 2; // Slightly bigger center particles
+                }
+                if (p.x < window.innerWidth * 0.35 || p.x > window.innerWidth * 0.65) {
+                    p.opacity = 1; // Fully visible on sides
+                    p.size = Math.random() * 6 + 3; // Bigger particles on left/right
+                }
+            });
+        }, 800); // Slight delay for better effect
+
+        /* Darker Center Effect - Slightly Weaker */
+        const canvas = document.querySelector("canvas");
+        if (canvas) {
+            const ctx = canvas.getContext("2d");
+            const gradient = ctx.createRadialGradient(
+                window.innerWidth / 2, 
+                window.innerHeight / 2, 
+                70,  // Slightly larger dense center
+                window.innerWidth / 2, 
+                window.innerHeight / 2, 
+                650 // Expanded fade-out range
+            );
+
+    gradient.addColorStop(0, "rgba(10, 25, 47, 0.15)"); // Less transparent than before
+    gradient.addColorStop(1, "rgba(10, 25, 47, 1)"); // Fully visible at edges
+
+    canvas.style.background = `radial-gradient(circle, rgba(10, 25, 47, 0.2) 25%, rgba(10, 25, 47, 1) 85%)`;
+}
+
+    </script>
+
+
+<!-- More about button animation and screen -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("loadButton");
+
+        // Ensure button starts fully hidden
+        button.style.opacity = "0";
+        button.style.visibility = "hidden";
+        button.style.transform = "scale(0.8)"; // Slightly smaller initially
+
+        setTimeout(() => {
+            button.style.visibility = "visible"; // Make button take space
+            button.style.opacity = "1"; // Fade in smoothly
+            button.style.transition = "opacity 0.8s ease-in-out, transform 0.6s ease-out";
+
+            // Check if animation has already played in this session
+            if (!sessionStorage.getItem("buttonAnimated")) {
+                button.classList.add("animate__animated", "animate__zoomIn");
+
+                button.addEventListener("animationend", function () {
+                    button.classList.remove("animate__animated", "animate__zoomIn");
+                    button.classList.add("zoomed"); // Keep zoomed
+                });
+
+                sessionStorage.setItem("buttonAnimated", "true");
+            } else {
+                button.classList.add("zoomed"); // Keep zoomed if already played
+            }
+        }, 3000); // Delay of 3 seconds
+
+            // Load popup on click
+            button.addEventListener("click", function () {
+                fetch("buttonContainer.html") // Fetch popup HTML
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("popup-container").innerHTML = data;
+
+                        // Show popup
+                        document.getElementById("popup").style.display = "block";
+                        document.getElementById("overlay").style.display = "block";
+
+                        // Attach event listener to close popup
+                        document.getElementById("closeButton").addEventListener("click", closePopup);
+                        document.getElementById("overlay").addEventListener("click", closePopup);
+                    });
+            });
+        });
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+
+
+<!-- Include Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+</body>
+</html>

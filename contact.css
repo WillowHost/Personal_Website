@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@700&family=Roboto:wght@400&display=swap');
+
+body {
+    background-color: #0a192f;
+    font-family: 'Lexend', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* gif for background */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrolling issues */
+    background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjdpaWpzejhtZ3l4ZHA2bmNmeWtsejk2Nmpua21iN2hkdWk3cTljdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohrygAnH3QLVxC3Pq/giphy.gif') center center / cover no-repeat fixed; 
+}
+
+
+.contact-container {
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 8rem;
+}
+
+h1 {
+    color: #ffd900e7;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    display: inline-block; 
+    padding: 10px 20px; 
+    background: #112240; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #112240;
+    color: rgb(248, 244, 244);
+    font-size: 16px;
+    outline: none;
+    box-shadow: 2px 3px 8px 1px rgb(191, 154, 19);
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: rgb(198, 191, 191);
+}
+
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: gold;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.back-button {
+    position: absolute;
+    top: 2px;
+    left: 0; /* Ensure it stretches from the left */
+    width: 100%; /* Full width */
+    text-align: center; /* Center the text */
+    color: #30363d;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #ffd900e7;
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 12px 0;
+}
+
+.back-button:hover {
+    background-color: #70abee;
+}
+
+@media (max-width: 600px) {
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #112240;
+        color: rgb(248, 244, 244);
+        font-size: 16px;
+        outline: none;
+        box-shadow: 2px 3px 8px 1px rgb(191, 154, 19);
+    }
+}
+@media (max-width: 480px) {
+    input, textarea {
+        width: 100%;
+        padding: 12px 0px 12px 4px;
+        border: none;
+        border-radius: 5px;
+        background-color: #112240;
+        color: rgb(248, 244, 244);
+        font-size: 16px;
+        outline: none;
+        box-shadow: 2px 3px 8px 1px rgb(191, 154, 19);
+    }
+}

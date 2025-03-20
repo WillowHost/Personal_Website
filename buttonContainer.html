@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Container</title>
+    <link rel="stylesheet" href="buttonStyles.css"> <!-- External CSS -->
+</head>
+<body>
+
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <img src="about-card.jpg" alt="Popup Image" class="popup-img">
+    <button class="close-btn" onclick="closePopup()">Close</button>
+</div>
+
+<!-- Embedded JavaScript -->
+<script>
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
